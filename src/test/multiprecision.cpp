@@ -202,6 +202,28 @@ TEST(elastic_multiprecision, add)
     ASSERT_EQ(sum, expected);
 }
 
+sg14::fixed_point<
+    boost::multiprecision::number<
+        boost::multiprecision::backends::cpp_int_backend<
+            65,
+            65,
+            boost::multiprecision::cpp_integer_type::unsigned_magnitude,
+            boost::multiprecision::cpp_int_check_type::unchecked,
+            void>,
+        boost::multiprecision::expression_template_option::et_off>,
+    0>
+
+boost::multiprecision::number<
+    boost::multiprecision::backends::cpp_int_backend<
+        64,
+        64,
+        boost::multiprecision::cpp_integer_type::unsigned_magnitude,
+        boost::multiprecision::cpp_int_check_type::unchecked,
+        void>,
+    boost::multiprecision::expression_template_option::et_off>
+
+
+
 TEST(elastic_multiprecision, subtract)
 {
     using int64 = elastic<64, 0, unsigned_multiprecision<>>;
